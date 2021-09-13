@@ -2,7 +2,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
 <h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Insert title here</title>
@@ -10,29 +12,31 @@
 
 <h:body>
 	
-			<h:form>
+			<h:form id="form">
 				<h:panelGrid columns="2">
-					<h:outputText value="Nome"/>
-					<h:inputText  value="#{bean.pessoa.nome}" />
+					<p:outputLabel value="Nome"/>
+					<p:inputText  value="#{bean.pessoa.nome}" />
 					
-					<h:outputText value="E-mail"/>
-					<h:inputText  value="#{bean.pessoa.email}" />
-					<h:outputText />
-					<h:commandButton value="Adicionar" action="#{bean.adicionar}" />
+					<p:outputLabel value="E-mail"/>
+					<p:inputText  value="#{bean.pessoa.email}" />
+					<p:outputLabel />
+					<p:commandButton value="Adicionar" action="#{bean.adicionar}" update="form tabelaPessoa"/>
+					<p:outputLabel />
+					<p:commandButton value="Limpar Registro" action="#{bean.removerTodos}" update="form tabelaPessoa"/>
 				
 				</h:panelGrid>
 			
 				<h1>Lista de pessoas</h1>
 				
-				<h:dataTable value="#{bean.pessoas}" var="p" border="1">
-					<h:column>#{p.nome}</h:column>
-					<h:column>#{p.email}</h:column>
+				<p:dataTable  value="#{bean.pessoas}" var="p" border="1" id="tabelaPessoa">
+					<p:column headerText="Nome">#{p.nome}</p:column>
+					<p:column headerText="E-mail">#{p.email}</p:column>
 					
-					<h:column>
+					<p:column  headerText="Editar">
 						<h:button value="Editar"  outcome="/paginas/Sucesso.xhtml?parametro=#{p.nome}" />
-					</h:column>
+					</p:column>
 					
-				</h:dataTable>
+				</p:dataTable>
 			
 			
 			</h:form>

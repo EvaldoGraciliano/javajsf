@@ -31,6 +31,11 @@ public class PessoaMB implements Serializable {
 		return null;
 	}
 	
+	public String removerTodos() {
+		pessoas.clear();
+		return null;
+	}
+	
 	private void limpar() {
 		pessoa = new Pessoa();
 	}
@@ -47,10 +52,7 @@ public class PessoaMB implements Serializable {
 		return pessoas;
 	}
 
-	public void setPessoas(List<Pessoa> pessoas) {
-		this.pessoas = pessoas;
-	}
-	
+
 	
 	
 }
