@@ -7,24 +7,32 @@
 	
 <h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<h:outputStylesheet library="css" name="file.css" />
 <title>Insert title here</title>
 </h:head>
 
 <h:body>
-	
+			<p:graphicImage library="imagens" name="logo.png" width="200" />
+
 			<h:form id="form">
+			
+			<h1>Informações de Cadastro</h1>
+			
+			<p:panel header = "Cadastro de clientes" > 
 				<h:panelGrid columns="2">
 					<p:outputLabel value="Nome"/>
-					<p:inputText  value="#{bean.pessoa.nome}" />
+					<p:inputText  value="#{bean.pessoa.nome}" size="50" />
 					
 					<p:outputLabel value="E-mail"/>
-					<p:inputText  value="#{bean.pessoa.email}" />
+					<p:inputText  value="#{bean.pessoa.email}" size="50" />
 					<p:outputLabel />
 					<p:commandButton value="Adicionar" action="#{bean.adicionar}" update="form tabelaPessoa"/>
 					<p:outputLabel />
 					<p:commandButton value="Limpar Registro" action="#{bean.removerTodos}" update="form tabelaPessoa"/>
 				
 				</h:panelGrid>
+			</p:panel>
+			</h:form>
 			
 				<h1>Lista de pessoas</h1>
 				
@@ -32,14 +40,13 @@
 					<p:column headerText="Nome">#{p.nome}</p:column>
 					<p:column headerText="E-mail">#{p.email}</p:column>
 					
-					<p:column  headerText="Editar">
+					<p:column  headerText="Editar" width="80">
 						<h:button value="Editar"  outcome="/paginas/Sucesso.xhtml?parametro=#{p.nome}" />
 					</p:column>
 					
 				</p:dataTable>
 			
-			
-			</h:form>
+		
 			
 </h:body>
 </html>
