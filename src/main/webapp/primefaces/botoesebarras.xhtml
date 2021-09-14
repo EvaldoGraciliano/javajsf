@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+	
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<h:outputStylesheet library="css" name="file.css" />
+<h:outputStylesheet library="webjars" name="font-awesome/5.12.0/css/all.min-jsf.css" />
+<h:outputStylesheet library="webjars" name="font-awesome/5.12.0/css/v4-shims.min-jsf.css" />
+<title>Insert title here</title>
+</h:head>
+
+<h:body>
+		
+		<h1>Barra  e botões</h1>
+		
+		<h:form id="form">
+			<p:toolbar>
+				
+				<f:facet name="left" >
+					
+					<p:button value="Novo" icon="pi pi-home" style="margin:8px"/>
+					
+					<p:button value="Abrir" icon="pi pi-envelope"></p:button>
+					
+					
+				
+				</f:facet>
+				
+				<f:facet name="right" >
+				<p:menuButton value="opções">
+					<p:menuitem value="Salvar" icon="pi pi-save"   />
+					<p:menuitem value="Alterar" icon="pi pi-user-edit"   />
+					<p:menuitem value="Deletar" icon="pi pi-times"   />
+					
+				</p:menuButton>
+				
+				</f:facet>
+			
+			</p:toolbar>
+			
+		</h:form>
+		
+		
+			
+</h:body>
+</html>
